@@ -72,17 +72,17 @@ call plug#end()
 
 source ~/.config/nvim/plug-config/cmp.lua
 source ~/.config/nvim/plug-config/comment.nvim.lua
-source ~/.config/nvim/plug-config/fzf.vim
-source ~/.config/nvim/plug-config/indent-blankline.vim
+source ~/.config/nvim/plug-config/fzf.lua
+source ~/.config/nvim/plug-config/indent-blankline.lua
 source ~/.config/nvim/plug-config/lsp-installer.lua
 source ~/.config/nvim/plug-config/lspconfig.lua
 source ~/.config/nvim/plug-config/lualine.nvim.lua
-source ~/.config/nvim/plug-config/nord.vim
+source ~/.config/nvim/plug-config/nord.lua
 source ~/.config/nvim/plug-config/null-ls.lua
 source ~/.config/nvim/plug-config/nvim-treesitter.lua
 source ~/.config/nvim/plug-config/spellsitter.lua
-source ~/.config/nvim/plug-config/startify.vim
-source ~/.config/nvim/plug-config/vim-agriculture.vim
-source ~/.config/nvim/plug-config/vim-better-whitespace.vim
-source ~/.config/nvim/plug-config/vimtex.vim
+source ~/.config/nvim/plug-config/startify.lua
+source ~/.config/nvim/plug-config/vim-agriculture.lua
+source ~/.config/nvim/plug-config/vim-better-whitespace.lua
+source ~/.config/nvim/plug-config/vimtex.lua
 

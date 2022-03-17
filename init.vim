@@ -62,4 +62,4 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 source ~/.config/nvim/plugins.lua
 
-source ~/.config/nvim/keys.lua
+source ~/.config/nvim/lua/keys.lua

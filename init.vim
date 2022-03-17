@@ -60,6 +60,6 @@ let g:netrw_winsize=30 " With a vertical split open, show the directory listing 
 " Show line numbers
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
-source ~/.config/nvim/plugins.lua
+source ~/.config/nvim/lua/plugins.lua
 
 source ~/.config/nvim/lua/keys.lua

@@ -2,6 +2,9 @@ local Plug = vim.fn["plug#"]
 
 vim.call("plug#begin", "~/.local/share/nvim/plugged")
 
+-- Easy-access terminal
+Plug("akinsho/toggleterm.nvim")
+
 -- Theme
 Plug("arcticicestudio/nord-vim")
 
@@ -84,6 +87,7 @@ require("plug-config/null-ls")
 require("plug-config/nvim-treesitter")
 require("plug-config/spellsitter")
 require("plug-config/startify")
+require("plug-config/toggleterm")
 require("plug-config/vim-agriculture")
 require("plug-config/vim-better-whitespace")
 require("plug-config/vimtex")

@@ -52,17 +52,22 @@ Plug("hrsh7th/vim-vsnip")
 Plug("rafamadriz/friendly-snippets")
 Plug("hrsh7th/cmp-nvim-lsp-signature-help") -- Source for displaying function signatures with the current parameter emphasized
 Plug("jose-elias-alvarez/null-ls.nvim")
-Plug("nvim-lua/plenary.nvim") -- Required by null-ls
+Plug("nvim-lua/plenary.nvim") -- Required by null-ls and telescope
 Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion
+
+-- Telescope
+-- Plug("nvim-lua/plenary.nvim")
+Plug("nvim-telescope/telescope-fzf-native.nvim", { ["do"] = "make" })
+Plug("nvim-telescope/telescope.nvim")
 
 -- lualine
 Plug("nvim-lualine/lualine.nvim")
 Plug("kyazdani42/nvim-web-devicons")
 
 -- fzf
-Plug("junegunn/fzf", { ["do"] = vim.fn["fzf#install"] })
-Plug("junegunn/fzf.vim")
-Plug("jesseleite/vim-agriculture")
+-- Plug("junegunn/fzf", { ["do"] = vim.fn["fzf#install"] })
+-- Plug("junegunn/fzf.vim")
+-- Plug("jesseleite/vim-agriculture")
 
 -- tressitter
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = vim.fn["TSUpdate"] })
@@ -80,7 +85,7 @@ vim.call("plug#end")
 
 require("plug-config/cmp")
 require("plug-config/comment")
-require("plug-config/fzf")
+-- require("plug-config/fzf")
 require("plug-config/indent-blankline")
 require("plug-config/lsp-installer")
 require("plug-config/lspconfig")
@@ -90,6 +95,7 @@ require("plug-config/null-ls")
 require("plug-config/nvim-treesitter")
 require("plug-config/spellsitter")
 require("plug-config/startify")
+require("plug-config/telescope")
 require("plug-config/toggleterm")
 require("plug-config/vim-agriculture")
 require("plug-config/vim-better-whitespace")

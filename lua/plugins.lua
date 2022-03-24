@@ -49,6 +49,7 @@ Plug("hrsh7th/cmp-nvim-lua")
 Plug("hrsh7th/nvim-cmp")
 Plug("hrsh7th/cmp-vsnip")
 Plug("hrsh7th/vim-vsnip")
+Plug("rafamadriz/friendly-snippets")
 Plug("hrsh7th/cmp-nvim-lsp-signature-help") -- Source for displaying function signatures with the current parameter emphasized
 Plug("jose-elias-alvarez/null-ls.nvim")
 Plug("nvim-lua/plenary.nvim") -- Required by null-ls

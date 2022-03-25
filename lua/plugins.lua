@@ -65,11 +65,6 @@ Plug("nvim-telescope/telescope-fzf-native.nvim", { ["do"] = "make" })
 Plug("nvim-lualine/lualine.nvim")
 Plug("kyazdani42/nvim-web-devicons")
 
--- fzf
--- Plug("junegunn/fzf", { ["do"] = vim.fn["fzf#install"] })
--- Plug("junegunn/fzf.vim")
--- Plug("jesseleite/vim-agriculture")
-
 -- tressitter
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = vim.fn["TSUpdate"] })
 Plug("lewis6991/spellsitter.nvim")
@@ -86,7 +81,6 @@ vim.call("plug#end")
 
 require("plug-config/cmp")
 require("plug-config/comment")
--- require("plug-config/fzf")
 require("plug-config/indent-blankline")
 require("plug-config/lsp-installer")
 require("plug-config/lspconfig")

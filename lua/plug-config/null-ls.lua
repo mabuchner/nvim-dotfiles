@@ -24,7 +24,12 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.gitlint,
 		null_ls.builtins.diagnostics.jsonlint,
 		--null_ls.builtins.diagnostics.luacheck,
-		null_ls.builtins.diagnostics.markdownlint,
+		null_ls.builtins.diagnostics.markdownlint.with({
+            args = {
+                "--stdin",
+                "--disable MD013", -- Max line length
+            }
+        }),
 		null_ls.builtins.diagnostics.proselint,
 		null_ls.builtins.diagnostics.pylint,
 		null_ls.builtins.diagnostics.shellcheck,

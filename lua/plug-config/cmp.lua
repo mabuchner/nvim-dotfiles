@@ -82,9 +82,11 @@ cmp.setup({
 			end,
 		}),
 	},
-	documentation = {
-		border = "rounded",
-	},
+    window = {
+        documentation = {
+            border = "rounded",
+        },
+    },
 	experimental = {
 		ghost_text = true,
 	},

@@ -11,6 +11,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.diagnostics.chktex,
 		null_ls.builtins.diagnostics.cppcheck.with({
+			method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 			args = {
 				"--enable=warning,style,performance,portability",
 				"--template=gcc",

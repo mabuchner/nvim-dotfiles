@@ -50,8 +50,8 @@ Plug("hrsh7th/nvim-cmp")
 Plug("hrsh7th/cmp-vsnip")
 Plug("hrsh7th/vim-vsnip")
 Plug("rafamadriz/friendly-snippets")
-Plug("hrsh7th/cmp-nvim-lsp-signature-help") -- Source for displaying function signatures with the current parameter emphasized
 Plug("jose-elias-alvarez/null-ls.nvim")
+Plug("ray-x/lsp_signature.nvim")
 Plug("nvim-lua/plenary.nvim") -- Required by null-ls and telescope
 Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion
 
@@ -90,6 +90,7 @@ require("plug-config/comment")
 require("plug-config/indent-blankline")
 require("plug-config/lsp-installer")
 require("plug-config/lspconfig")
+require("plug-config/lsp_signature")
 require("plug-config/lualine")
 require("plug-config/nord")
 require("plug-config/null-ls")

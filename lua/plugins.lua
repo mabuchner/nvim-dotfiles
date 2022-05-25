@@ -72,6 +72,9 @@ Plug("lewis6991/spellsitter.nvim")
 -- Notifications
 Plug("rcarriga/nvim-notify")
 
+-- Show light bulb in sign column whenever a code action is available
+Plug("kosayoda/nvim-lightbulb")
+
 -- Comments
 Plug("numToStr/Comment.nvim")
 
@@ -91,6 +94,7 @@ require("plug-config/lualine")
 require("plug-config/nord")
 require("plug-config/null-ls")
 require("plug-config/nvim-notify")
+require("plug-config/nvim-lightbulb")
 require("plug-config/nvim-treesitter")
 require("plug-config/spellsitter")
 require("plug-config/startify")

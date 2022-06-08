@@ -1,6 +1,9 @@
 local telescope = require("telescope")
 
 telescope.setup({
+	defaults = {
+		path_display = { "smart" },
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching
@@ -21,7 +24,7 @@ vim.api.nvim_set_keymap("n", "<leader>fg", ":Telescope live_grep_raw<cr>", { nor
 vim.api.nvim_set_keymap(
 	"v",
 	"<leader>fg",
-	"\"zy<esc>:Telescope live_grep_raw default_text=<c-r>z<cr>",
+	'"zy<esc>:Telescope live_grep_raw default_text=<c-r>z<cr>',
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope buffers<cr>", { noremap = true })

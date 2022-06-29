@@ -38,6 +38,9 @@ Plug("tpope/vim-dispatch")
 -- Mappings for complimentary pairs
 Plug("tpope/vim-unimpaired")
 
+-- Pig syntax highlighting
+Plug("motus/pig.vim")
+
 -- LSP
 Plug("neovim/nvim-lspconfig")
 Plug("williamboman/nvim-lsp-installer")

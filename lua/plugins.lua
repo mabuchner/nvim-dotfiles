@@ -21,7 +21,7 @@ Plug("lukas-reineke/indent-blankline.nvim")
 Plug("ntpeters/vim-better-whitespace")
 
 -- Automatic closing of quotes, parenthesis, brackets, etc.
-Plug("Raimondi/delimitMate")
+Plug("windwp/nvim-autopairs")
 
 -- Git
 Plug("tpope/vim-fugitive")
@@ -101,6 +101,7 @@ require("plug-config/lsp_signature")
 require("plug-config/lualine")
 require("plug-config/nord")
 require("plug-config/null-ls")
+require("plug-config/nvim-autopairs")
 require("plug-config/nvim-notify")
 require("plug-config/nvim-lightbulb")
 require("plug-config/nvim-treesitter")

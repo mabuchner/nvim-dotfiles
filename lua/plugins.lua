@@ -75,6 +75,9 @@ Plug("lewis6991/spellsitter.nvim")
 -- Notifications
 Plug("rcarriga/nvim-notify")
 
+-- Show LSP progress
+Plug("j-hui/fidget.nvim")
+
 -- UI for vim.ui.select and vim.ui.input hooks
 Plug("stevearc/dressing.nvim")
 
@@ -97,6 +100,7 @@ vim.call("plug#end")
 
 require("plug-config/cmp")
 require("plug-config/comment")
+require("plug-config/fidget-nvim")
 require("plug-config/indent-blankline")
 require("plug-config/lsp-installer")
 require("plug-config/lspconfig")

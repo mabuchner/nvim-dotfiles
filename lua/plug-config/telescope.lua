@@ -18,6 +18,7 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("live_grep_args")
+telescope.load_extension("notify")
 
 vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<cr>", { noremap = true })
 --vim.api.nvim_set_keymap("n", "<leader>fg", ":Telescope live_grep<cr>", { noremap = true })

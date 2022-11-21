@@ -6,7 +6,7 @@ local on_attach = function(client, bufnr)
 	lsp_buf_set_keymaps(bufnr)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local enhance_server_opts = {
 	-- Provide settings that should only apply to the "eslint" server

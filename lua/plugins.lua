@@ -58,6 +58,7 @@ Plug("L3MON4D3/LuaSnip")
 Plug("saadparwaiz1/cmp_luasnip")
 Plug("rafamadriz/friendly-snippets")
 Plug("jose-elias-alvarez/null-ls.nvim")
+Plug("jayp0521/mason-null-ls.nvim")
 Plug("ray-x/lsp_signature.nvim")
 Plug("nvim-lua/plenary.nvim") -- Required by null-ls and telescope
 Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion

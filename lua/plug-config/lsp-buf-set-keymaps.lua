@@ -28,11 +28,16 @@ local lsp_buf_set_keymaps = function(bufnr)
 	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "v", "<space>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", opts)
+	vim.keymap.set(
+		{ "v", "n" },
+		"<space>ca",
+		vim.lsp.buf.code_action,
+		{ buffer = bufnr, noremap = true, silent = true }
+	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+	vim.keymap.set({ "v", "n" }, "<space>f", function()
+		vim.lsp.buf.format({ async = true })
+	end, { buffer = bufnr, noremap = true, silent = true })
 
 	-- Debugger
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<F5>", "<cmd>lua require('dap').continue()<CR>", opts)

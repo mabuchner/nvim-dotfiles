@@ -142,7 +142,7 @@ local start_or_attach = function()
 	-- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 	jdtls.start_or_attach({
 		cmd = cmd,
-		settigns = settings,
+		settings = settings,
 		init_options = init_options,
 		on_attach = on_attach,
 		handlers = {

@@ -70,19 +70,27 @@ return {
     -- Pig syntax highlighting
     "motus/pig.vim",
 
-    -- Status line component showing the current code context using LSP
+    -- Component showing the current code context using LSP
     {
         "SmiteshP/nvim-navic",
         config = true,
+        dependencies = {
+            "neovim/nvim-lspconfig",
+        },
     },
 
     -- LSP
-    "williamboman/mason-lspconfig.nvim",
     {
         "williamboman/mason.nvim",
         init = function()
             require("plug-config/mason-nvim")
         end,
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "hrsh7th/cmp-nvim-lsp",
+        },
     },
     {
         "neovim/nvim-lspconfig",
@@ -90,31 +98,48 @@ return {
             require("plug-config/lspconfig")
         end,
     },
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-nvim-lua",
     {
         "hrsh7th/nvim-cmp",
         init = function()
             require("plug-config/cmp")
         end,
+        dependencies = {
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+
+            -- Add pictograms to lsp completion
+            "onsails/lspkind-nvim",
+
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-nvim-lua",
+        },
     },
     {
         "L3MON4D3/LuaSnip",
         init = function()
             require("plug-config/luasnip")
         end,
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+        },
     },
-    "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
-    "jayp0521/mason-null-ls.nvim",
     {
         "jose-elias-alvarez/null-ls.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+    {
+        "jayp0521/mason-null-ls.nvim",
         init = function()
             require("plug-config/null-ls")
         end,
+        dependencies = {
+            "jose-elias-alvarez/null-ls.nvim",
+        },
     },
     {
         "ray-x/lsp_signature.nvim",
@@ -125,8 +150,6 @@ return {
             },
         },
     },
-    "nvim-lua/plenary.nvim", -- Required by null-ls and telescope
-    "onsails/lspkind-nvim", -- Add pictograms to lsp completion
 
     -- Java LSP
     {
@@ -142,7 +165,11 @@ return {
         init = function()
             require("plug-config/nvim-metals")
         end,
-    }, -- Requires "nvim-lua/plenary.nvim
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/cmp-nvim-lsp",
+        },
+    },
 
     -- Debugging
     {
@@ -157,7 +184,6 @@ return {
     },
 
     -- Telescope
-    -- Plug("nvim-lua/plenary.nvim")
     "nvim-telescope/telescope-live-grep-args.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     {
@@ -165,15 +191,22 @@ return {
         init = function()
             require("plug-config/telescope")
         end,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
     },
 
     -- lualine
-    "kyazdani42/nvim-web-devicons",
     {
         "nvim-lualine/lualine.nvim",
         init = function()
             require("plug-config/lualine")
         end,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "SmiteshP/nvim-navic",
+        },
     },
 
     -- tressitter
@@ -206,8 +239,10 @@ return {
     {
         "kosayoda/nvim-lightbulb",
         opts = { autocmd = { enabled = true } },
+        dependencies = {
+            "antoinemadec/FixCursorHold.nvim", -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
+        },
     },
-    "antoinemadec/FixCursorHold.nvim", -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
 
     -- List for diagnostics
     {
@@ -215,7 +250,10 @@ return {
         init = function()
             require("plug-config/trouble")
         end,
-    }, -- Depends on "kyazdani42/nvim-web-devicons"
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
 
     -- Comments
     {

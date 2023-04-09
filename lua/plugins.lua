@@ -2,9 +2,13 @@ return {
     -- Easy-access terminal
     {
         "akinsho/toggleterm.nvim",
-        init = function()
-            require("plug-config/toggleterm")
-        end,
+        opts = {
+            open_mapping = [[<c-\>]],
+            direction = "float",
+            float_opts = {
+                border = "curved",
+            },
+        },
     },
 
     -- Theme
@@ -29,9 +33,9 @@ return {
     -- Indentation guides
     {
         "lukas-reineke/indent-blankline.nvim",
-        init = function()
-            require("plug-config/indent-blankline")
-        end,
+        opts = {
+            fileType = { "c", "cpp", "cmake", "cs", "css", "html", "javascript", "json", "objc", "python", "xml" },
+        },
     },
 
     -- Highlight trailing whitespace
@@ -45,9 +49,7 @@ return {
     -- Automatic closing of quotes, parenthesis, brackets, etc.
     {
         "windwp/nvim-autopairs",
-        init = function()
-            require("plug-config/nvim-autopairs")
-        end,
+        config = true,
     },
 
     -- Git
@@ -67,6 +69,12 @@ return {
 
     -- Pig syntax highlighting
     "motus/pig.vim",
+
+    -- Status line component showing the current code context using LSP
+    {
+        "SmiteshP/nvim-navic",
+        config = true,
+    },
 
     -- LSP
     "williamboman/mason-lspconfig.nvim",
@@ -110,9 +118,12 @@ return {
     },
     {
         "ray-x/lsp_signature.nvim",
-        init = function()
-            require("plug-config/lsp_signature")
-        end,
+        opts = {
+            bind = true, -- This is mandatory, otherwise border config won't get registered.
+            handler_opts = {
+                border = "rounded",
+            },
+        },
     },
     "nvim-lua/plenary.nvim", -- Required by null-ls and telescope
     "onsails/lspkind-nvim", -- Add pictograms to lsp completion
@@ -142,14 +153,6 @@ return {
         },
         init = function()
             require("plug-config/nvim-dap")
-        end,
-    },
-
-    -- Status line component showing the current code context using LSP
-    {
-        "SmiteshP/nvim-navic",
-        init = function()
-            require("plug-config/nvim-navic")
         end,
     },
 
@@ -193,9 +196,7 @@ return {
     -- Show LSP progress
     {
         "j-hui/fidget.nvim",
-        init = function()
-            require("plug-config/fidget-nvim")
-        end,
+        config = true,
     },
 
     -- UI for vim.ui.select and vim.ui.input hooks
@@ -204,9 +205,7 @@ return {
     -- Show light bulb in sign column whenever a code action is available
     {
         "kosayoda/nvim-lightbulb",
-        init = function()
-            require("plug-config/nvim-lightbulb")
-        end,
+        opts = { autocmd = { enabled = true } },
     },
     "antoinemadec/FixCursorHold.nvim", -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
 
@@ -221,9 +220,7 @@ return {
     -- Comments
     {
         "numToStr/Comment.nvim",
-        init = function()
-            require("plug-config/comment")
-        end,
+        config = true,
     },
 
     -- Latex

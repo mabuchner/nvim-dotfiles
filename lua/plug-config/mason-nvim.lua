@@ -14,7 +14,13 @@ local on_attach = function(client, bufnr)
     lsp_buf_set_keymaps(bufnr)
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+-- Specify offset encoding for clangd to avoid conflicts with null-ls
+local capabilities_clangd = cmp_nvim_lsp.default_capabilities()
+capabilities_clangd.offsetEncoding = "utf-8"
 
 local lsp_flags = {
     debounce_text_changes = 150,
@@ -25,6 +31,13 @@ mason_lspconfig.setup_handlers({
         lspconfig[server_name].setup({
             on_attach = on_attach,
             capabilities = capabilities,
+            flags = lsp_flags,
+        })
+    end,
+    ["clangd"] = function()
+        lspconfig.clangd.setup({
+            on_attach = on_attach,
+            capabilities = capabilities_clangd,
             flags = lsp_flags,
         })
     end,

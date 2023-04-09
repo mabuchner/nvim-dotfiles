@@ -1,63 +1,64 @@
-local null_ls = require("null-ls")
+local config = function()
+    local null_ls = require("null-ls")
 
-local mason_null_ls = require("mason-null-ls")
+    local mason_null_ls = require("mason-null-ls")
 
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.prettier,
-        null_ls.builtins.formatting.cmake_format,
-        null_ls.builtins.formatting.latexindent,
-        null_ls.builtins.formatting.scalafmt,
-        null_ls.builtins.formatting.shellharden,
-        null_ls.builtins.formatting.shfmt,
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.diagnostics.chktex,
-        null_ls.builtins.diagnostics.cppcheck.with({
-            method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-            args = {
-                "--enable=warning,style,performance,portability",
-                "--template=gcc",
-                "--language=c++",
-                "$FILENAME",
-            },
-        }),
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.diagnostics.flake8,
-        null_ls.builtins.diagnostics.gitlint,
-        null_ls.builtins.diagnostics.jsonlint,
-        null_ls.builtins.diagnostics.markdownlint.with({
-            args = {
-                "--stdin",
-                "--disable MD013", -- Max line length
-            },
-        }),
-        null_ls.builtins.diagnostics.proselint,
-        null_ls.builtins.diagnostics.pylint,
-        null_ls.builtins.diagnostics.shellcheck,
-        null_ls.builtins.diagnostics.vint,
-        null_ls.builtins.diagnostics.write_good,
-        null_ls.builtins.code_actions.eslint,
-        null_ls.builtins.code_actions.proselint,
-        null_ls.builtins.code_actions.shellcheck,
-        null_ls.builtins.completion.spell,
-    },
-})
-
-mason_null_ls.setup({
-    ensure_installed = nil,
-    automatic_installation = {
-        exclude = {
-            "cmake_format",
-            "chktex",
-            "cppcheck",
-            "latexindent",
-            "scalafmt",
+    null_ls.setup({
+        sources = {
+            null_ls.builtins.formatting.prettier,
+            null_ls.builtins.formatting.cmake_format,
+            null_ls.builtins.formatting.latexindent,
+            null_ls.builtins.formatting.scalafmt,
+            null_ls.builtins.formatting.shellharden,
+            null_ls.builtins.formatting.shfmt,
+            null_ls.builtins.formatting.stylua,
+            null_ls.builtins.diagnostics.chktex,
+            null_ls.builtins.diagnostics.cppcheck.with({
+                method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+                args = {
+                    "--enable=warning,style,performance,portability",
+                    "--template=gcc",
+                    "--language=c++",
+                    "$FILENAME",
+                },
+            }),
+            null_ls.builtins.diagnostics.eslint,
+            null_ls.builtins.diagnostics.flake8,
+            null_ls.builtins.diagnostics.gitlint,
+            null_ls.builtins.diagnostics.jsonlint,
+            null_ls.builtins.diagnostics.markdownlint.with({
+                args = {
+                    "--stdin",
+                    "--disable MD013", -- Max line length
+                },
+            }),
+            null_ls.builtins.diagnostics.proselint,
+            null_ls.builtins.diagnostics.pylint,
+            null_ls.builtins.diagnostics.shellcheck,
+            null_ls.builtins.diagnostics.vint,
+            null_ls.builtins.diagnostics.write_good,
+            null_ls.builtins.code_actions.eslint,
+            null_ls.builtins.code_actions.proselint,
+            null_ls.builtins.code_actions.shellcheck,
+            null_ls.builtins.completion.spell,
         },
-    },
-    automatic_setup = false,
-})
+    })
 
---[[
+    mason_null_ls.setup({
+        ensure_installed = nil,
+        automatic_installation = {
+            exclude = {
+                "cmake_format",
+                "chktex",
+                "cppcheck",
+                "latexindent",
+                "scalafmt",
+            },
+        },
+        automatic_setup = false,
+    })
+
+    --[[
 mason_null_ls.setup()
 
 mason_null_ls.setup_handlers({
@@ -143,3 +144,20 @@ mason_null_ls.setup_handlers({
 
 null_ls.setup()
 --]]
+end
+
+return {
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+    {
+        "jayp0521/mason-null-ls.nvim",
+        config = config,
+        dependencies = {
+            "jose-elias-alvarez/null-ls.nvim",
+        },
+    },
+}

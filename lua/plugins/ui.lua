@@ -2,7 +2,17 @@ return {
     -- UI for vim.ui.select and vim.ui.input hooks
     {
         "stevearc/dressing.nvim",
-        event = "VeryLazy",
+        lazy = true,
+        init = function()
+            vim.ui.select = function(...)
+                require("lazy").load({ plugins = { "dressing.nvim" } })
+                return vim.ui.select(...)
+            end
+            vim.ui.input = function(...)
+                require("lazy").load({ plugins = { "dressing.nvim" } })
+                return vim.ui.input(...)
+            end
+        end,
     },
     -- Show notifications
     {

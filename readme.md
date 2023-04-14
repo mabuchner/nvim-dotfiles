@@ -1,11 +1,5 @@
 # My neovim configuration
 
-Install [plug](https://github.com/junegunn/vim-plug)
-
-```sh
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
 
 Clone repository into `.config` directory
 
@@ -14,12 +8,7 @@ cd ~/.config
 git clone https://github.com/mabuchner/nvim-dotfiles nvim
 ```
 
-Run nvim (ignore errors) and install plugins
-
-```
-nvim
-:PlugInstall
-```
+This configuration is uses the [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager. The plugin manger and all plugins will get installed automatically.
 
 Install LSPs
 
@@ -41,4 +30,3 @@ bold_font SauceCodePro Nerd Font Mono Bold
 italic_font SauceCodePro Nerd Font Mono Italic
 bold_italic_font SauceCodePro Nerd Font Mono Bold Italic
 ```
-

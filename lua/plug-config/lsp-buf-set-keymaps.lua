@@ -14,6 +14,24 @@ local dap_continue = function()
     require("dap").continue()
 end
 
+local dap_set_conditional_breakpoint = function()
+    vim.ui.input({ prompt = "Breakpoint condition: " }, function(input)
+        if input == nil then
+            return
+        end
+        require("dap").set_breakpoint(input)
+    end)
+end
+
+local dap_set_log_point = function()
+    vim.ui.input({ prompt = "Log point message: " }, function(input)
+        if input == nil then
+            return
+        end
+        require("dap").set_breakpoint(nil, nil, input)
+    end)
+end
+
 local lsp_buf_set_keymaps = function(bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -53,18 +71,8 @@ local lsp_buf_set_keymaps = function(bufnr)
     vim.keymap.set("n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", buffer_opts)
     vim.keymap.set("n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", buffer_opts)
     vim.keymap.set("n", "<space>b", "<cmd>lua require('dap').toggle_breakpoint()<CR>", buffer_opts)
-    vim.keymap.set(
-        "n",
-        "<space>B",
-        "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-        buffer_opts
-    )
-    vim.keymap.set(
-        "n",
-        "<space>lp",
-        "<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
-        buffer_opts
-    )
+    vim.keymap.set("n", "<space>B", dap_set_conditional_breakpoint, buffer_opts)
+    vim.keymap.set("n", "<space>lp", dap_set_log_point, buffer_opts)
     vim.keymap.set("n", "<space>dr", "<cmd>lua require('dap').repl.open()<CR>", buffer_opts)
     vim.keymap.set("n", "<space>dl", "<cmd>lua require('dap').run_last()<CR>", buffer_opts)
     vim.keymap.set("n", "<M-k>", "<cmd>lua require('dapui').eval()<CR>", buffer_opts)

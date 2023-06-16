@@ -94,6 +94,7 @@ return {
             -- Loading indicator
             {
                 "j-hui/fidget.nvim",
+                tag = "legacy", -- As recommended by the author while code is being rewritten
                 config = true,
             },
 

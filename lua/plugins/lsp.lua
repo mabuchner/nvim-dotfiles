@@ -48,6 +48,22 @@ local config = function()
                 flags = lsp_flags,
             })
         end,
+        ["gopls"] = function()
+            lspconfig.gopls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                flags = lsp_flags,
+                settings = {
+                    gopls = {
+                        completeUnimported = true,
+                        usePlaceholders = true,
+                        analyses = {
+                            unusedparams = true,
+                        },
+                    },
+                },
+            })
+        end,
         ["rust_analyzer"] = function()
             lspconfig.rust_analyzer.setup({
                 on_attach = on_attach,

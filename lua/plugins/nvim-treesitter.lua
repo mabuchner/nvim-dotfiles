@@ -46,6 +46,7 @@ local init = function()
             "scheme",
             "scss",
             "swift",
+            "thrift",
             "toml",
             "tsx",
             "typescript",

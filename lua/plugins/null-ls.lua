@@ -9,7 +9,7 @@ local config = function()
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.cmake_format,
             null_ls.builtins.formatting.latexindent,
-            null_ls.builtins.formatting.gofmt,
+            -- null_ls.builtins.formatting.gofmt,
             null_ls.builtins.formatting.goimports.with({
                 args = {
                     "-srcdir",

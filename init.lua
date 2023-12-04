@@ -57,6 +57,7 @@ vim.cmd([[
 augroup custom-shift-width
   autocmd!
   autocmd FileType javascript,json,typescript,typescriptreact setlocal shiftwidth=2 tabstop=2
+  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
 augroup END
 ]])
 

@@ -25,7 +25,6 @@ local config = function()
             null_ls.builtins.formatting.scalafmt,
             null_ls.builtins.formatting.shellharden,
             null_ls.builtins.formatting.shfmt,
-            null_ls.builtins.formatting.stylua,
             null_ls.builtins.diagnostics.chktex,
             null_ls.builtins.diagnostics.cppcheck.with({
                 method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
@@ -145,9 +144,6 @@ mason_null_ls.setup_handlers({
     end,
     spell = function(source_name, methods)
         null_ls.register(null_ls.builtins.completion.spell)
-    end,
-    stylua = function(source_name, methods)
-        null_ls.register(null_ls.builtins.formatting.stylua)
     end,
     vint = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.vint)

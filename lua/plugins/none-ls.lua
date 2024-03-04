@@ -36,7 +36,6 @@ local config = function()
             null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.gitlint,
             -- null_ls.builtins.diagnostics.golangci_lint,
-            null_ls.builtins.diagnostics.jsonlint,
             null_ls.builtins.diagnostics.markdownlint.with({
                 args = {
                     "--stdin",
@@ -94,9 +93,6 @@ mason_null_ls.setup_handlers({
     end,
     gitlint = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.gitlint)
-    end,
-    jsonlint = function(source_name, methods)
-        null_ls.register(null_ls.builtins.diagnostics.jsonlint)
     end,
     markdownlint = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.markdownlint.with({

@@ -8,7 +8,6 @@ local config = function()
         sources = {
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.cmake_format,
-            require("none-ls.formatting.latexindent"),
             -- null_ls.builtins.formatting.gofmt,
             null_ls.builtins.formatting.goimports.with({
                 args = {
@@ -63,7 +62,6 @@ local config = function()
             exclude = {
                 "cmake_format",
                 "cppcheck",
-                "latexindent",
                 "scalafmt",
             },
         },
@@ -105,9 +103,6 @@ mason_null_ls.setup_handlers({
     end,
     jsonlint = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.jsonlint)
-    end,
-    latexindent = function(source_name, methods)
-        null_ls.register(null_ls.builtins.formatting.latexindent)
     end,
     markdownlint = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.markdownlint.with({

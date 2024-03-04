@@ -25,7 +25,6 @@ local config = function()
             null_ls.builtins.formatting.scalafmt,
             null_ls.builtins.formatting.shellharden,
             null_ls.builtins.formatting.shfmt,
-            null_ls.builtins.diagnostics.chktex,
             null_ls.builtins.diagnostics.cppcheck.with({
                 method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
                 args = {
@@ -63,7 +62,6 @@ local config = function()
         automatic_installation = {
             exclude = {
                 "cmake_format",
-                "chktex",
                 "cppcheck",
                 "latexindent",
                 "scalafmt",
@@ -83,9 +81,6 @@ mason_null_ls.setup_handlers({
     end,
     cmake_format = function(source_name, methods)
         null_ls.register(null_ls.builtins.formatting.cmake_format)
-    end,
-    chktex = function(source_name, methods)
-        null_ls.register(null_ls.builtins.diagnostics.chktex)
     end,
     cppcheck = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.cppcheck.with({

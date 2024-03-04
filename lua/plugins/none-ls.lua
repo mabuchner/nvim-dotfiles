@@ -46,7 +46,6 @@ local config = function()
             require("none-ls-shellcheck.diagnostics"),
             null_ls.builtins.diagnostics.vint,
             null_ls.builtins.diagnostics.write_good,
-            null_ls.builtins.code_actions.proselint,
             require("none-ls-shellcheck.code_actions"),
             null_ls.builtins.completion.spell.with({
                 filetypes = {

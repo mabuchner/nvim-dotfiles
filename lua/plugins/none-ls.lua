@@ -41,7 +41,7 @@ local config = function()
                     "--disable MD013", -- Max line length
                 },
             }),
-            null_ls.builtins.diagnostics.proselint,
+            -- null_ls.builtins.diagnostics.proselint,
             null_ls.builtins.diagnostics.pylint,
             require("none-ls-shellcheck.diagnostics"),
             null_ls.builtins.diagnostics.vint,

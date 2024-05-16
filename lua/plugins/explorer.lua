@@ -69,6 +69,9 @@ return {
                         StaticMethod = { icon = "󰠄 ", hl = "Function" },
                     },
                 },
+                filesystem = {
+                    hijack_netrw_behavior = "disabled",
+                }
             })
             vim.keymap.set("n", "<leader>ef", "<Cmd>Neotree toggle<CR>")
             vim.keymap.set("n", "<leader>eg", "<Cmd>Neotree git_status toggle<CR>")

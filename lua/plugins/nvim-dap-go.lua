@@ -1,5 +1,11 @@
 local config = function()
-	require("dap-go").setup()
+	require("dap-go").setup({
+        delve = {
+            args = {
+                "--check-go-version=false"
+            }
+        }
+    })
 end
 
 return {

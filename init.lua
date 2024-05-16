@@ -33,6 +33,8 @@ opt.ignorecase = true
 opt.wildmode = "longest:list,full"
 -- Restrict number of elements in popup menu
 opt.pumheight = 10
+-- Minimal number of screen lines to keep above and below the cursor
+opt.scrolloff = 3
 
 opt.tabstop = 4
 opt.shiftwidth = 4

@@ -46,7 +46,6 @@ local lsp_buf_set_keymaps = function(bufnr)
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", buffer_opts)
     vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", buffer_opts)
-    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", buffer_opts)
     vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", buffer_opts)
     vim.keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", buffer_opts)
     vim.keymap.set("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", buffer_opts)

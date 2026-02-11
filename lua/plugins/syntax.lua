@@ -4,4 +4,8 @@ return {
         "motus/pig.vim",
         ft = "pig",
     },
+    {
+        "aklt/plantuml-syntax",
+        ft = "plantuml",
+    }
 }

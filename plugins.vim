@@ -47,9 +47,9 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'nvim-lua/plenary.nvim' " Required by null-ls
 
-" Lightline
-Plug 'itchyny/lightline.vim'
-Plug 'josa42/nvim-lightline-lsp'
+" lualine
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -74,9 +74,9 @@ source ~/.config/nvim/plug-config/cmp.lua
 source ~/.config/nvim/plug-config/comment.nvim.lua
 source ~/.config/nvim/plug-config/fzf.vim
 source ~/.config/nvim/plug-config/indent-blankline.vim
-source ~/.config/nvim/plug-config/lightline.vim
 source ~/.config/nvim/plug-config/lsp-installer.lua
 source ~/.config/nvim/plug-config/lspconfig.lua
+source ~/.config/nvim/plug-config/lualine.nvim.lua
 source ~/.config/nvim/plug-config/nord.vim
 source ~/.config/nvim/plug-config/null-ls.lua
 source ~/.config/nvim/plug-config/nvim-treesitter.lua

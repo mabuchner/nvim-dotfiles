@@ -25,7 +25,19 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
+  tabline = {
+    lualine_a = {
+      {
+        'tabs',
+        max_length = vim.o.columns / 3,
+        mode = 2, -- Show tab no. + tab name
+        tabs_color = {
+          active = 'lualine_a_normal',
+          inactive = 'lualine_b_inactive',
+        }
+      }
+    },
+  },
   extensions = {
     'fugitive',
     'fzf',

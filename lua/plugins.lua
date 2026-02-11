@@ -89,7 +89,6 @@ Plug("kyazdani42/nvim-web-devicons")
 
 -- tressitter
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = vim.fn["TSUpdate"] })
-Plug("lewis6991/spellsitter.nvim")
 
 -- Notifications
 Plug("rcarriga/nvim-notify")
@@ -137,7 +136,6 @@ require("plug-config/nvim-notify")
 require("plug-config/nvim-lightbulb")
 require("plug-config/nvim-metals")
 require("plug-config/nvim-treesitter")
-require("plug-config/spellsitter")
 require("plug-config/startify")
 require("plug-config/telescope")
 require("plug-config/toggleterm")

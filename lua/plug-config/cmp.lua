@@ -70,6 +70,13 @@ cmp.setup({
 		format = lspkind.cmp_format({
 			mode = "symbol_text",
 
+			menu = {
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[Lua]",
+				vsnip = "[vsnip]",
+				buffer = "[Buffer]",
+			},
+
 			-- The function below will be called before any actual modifications from lspkind
 			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
 			before = function(entry, vim_item)

@@ -33,7 +33,6 @@ local config = function()
                     "$FILENAME",
                 },
             }),
-            null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.gitlint,
             -- null_ls.builtins.diagnostics.golangci_lint,
             null_ls.builtins.diagnostics.markdownlint.with({
@@ -87,9 +86,6 @@ mason_null_ls.setup_handlers({
                 "$FILENAME",
             },
         }))
-    end,
-    flake8 = function(source_name, methods)
-        null_ls.register(null_ls.builtins.diagnostics.flake8)
     end,
     gitlint = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.gitlint)

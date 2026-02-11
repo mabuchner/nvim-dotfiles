@@ -38,7 +38,6 @@ null_ls.setup({
 		null_ls.builtins.code_actions.eslint,
 		null_ls.builtins.code_actions.proselint,
 		null_ls.builtins.code_actions.shellcheck,
-		null_ls.builtins.completion.vsnip,
 		null_ls.builtins.completion.spell,
 	},
 })

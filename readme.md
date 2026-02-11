@@ -26,3 +26,17 @@ Install LSPs
 ```
 :LspInstall bashls clangd cmake dockerls html omnisharp sumneko_lua texlab tsserver
 ```
+
+
+The nvim-web-devicons plugin needs Nerd Fonts. Install Nerd Font as described [here](https://github.com/ryanoasis/nerd-fonts).
+
+Then instruct your terminal to use it. E.g., with kitty add the following to the `kitty.conf` file
+
+```
+# `kitty list-fonts` can be used to get a list of font names
+font_family SauceCodePro Nerd Font Mono
+bold_font SauceCodePro Nerd Font Mono Bold
+italic_font SauceCodePro Nerd Font Mono Italic
+bold_italic_font SauceCodePro Nerd Font Mono Bold Italic
+```
+

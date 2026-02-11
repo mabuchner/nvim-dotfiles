@@ -82,4 +82,6 @@ g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 require("keys")
 
+require("lsp")
+
 require("config.lazy")

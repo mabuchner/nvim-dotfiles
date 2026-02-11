@@ -163,16 +163,18 @@ end
 
 return {
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
     },
     {
-        "jayp0521/mason-null-ls.nvim",
-        config = config,
+        "jay-babu/mason-null-ls.nvim",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "jose-elias-alvarez/null-ls.nvim",
+            "williamboman/mason.nvim",
+            "nvimtools/none-ls.nvim",
         },
+        config = config,
     },
 }

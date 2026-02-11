@@ -3,6 +3,9 @@ local config = function()
 
     local mason_null_ls = require("mason-null-ls")
 
+    require("null-ls").register(require("none-ls-shellcheck.diagnostics"))
+    require("null-ls").register(require("none-ls-shellcheck.code_actions"))
+
     null_ls.setup({
         debounce = 1000,
         sources = {
@@ -162,6 +165,7 @@ return {
         "nvimtools/none-ls.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "gbprod/none-ls-shellcheck.nvim",
         },
     },
     {

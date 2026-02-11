@@ -40,6 +40,7 @@ notify.setup({
 
 vim.notify = notify
 
+--[[
 local lsp_notify_group = vim.api.nvim_create_augroup("LSPNotify", { clear = true })
 
 vim.api.nvim_create_autocmd({ "UIEnter" }, {
@@ -99,3 +100,4 @@ vim.api.nvim_create_autocmd({ "UIEnter" }, {
 		})
 	end,
 })
+--]]

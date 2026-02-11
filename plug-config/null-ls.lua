@@ -10,7 +10,14 @@ null_ls.setup({
         null_ls.builtins.formatting.shfmt,
         --null_ls.builtins.formatting.stylua,
         null_ls.builtins.diagnostics.chktex,
-        null_ls.builtins.diagnostics.cppcheck,
+        null_ls.builtins.diagnostics.cppcheck.with({
+            args = {
+                "--enable=warning,style,performance,portability",
+                "--template=gcc",
+                "--language=c++",
+                "$FILENAME"
+            }
+        }),
         null_ls.builtins.diagnostics.eslint,
         null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.gitlint,

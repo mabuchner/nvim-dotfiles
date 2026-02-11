@@ -16,8 +16,14 @@ vim.keymap.set("n", "<leader>fk", function()
 end)
 
 vim.keymap.set("n", "<leader>fn", function()
-    require('telescope.builtin').lsp_document_symbols({ symbols = 'function' })
+    -- require('telescope.builtin').lsp_document_symbols({ symbols = 'function' })
+    require('telescope.builtin').lsp_document_symbols()
 end)
+
+vim.keymap.set("n", "<leader>fs", function()
+    require('telescope.builtin').lsp_document_symbols()
+end)
+
 
 local config = function()
     local telescope = require("telescope")

@@ -1,6 +1,4 @@
 local opts = function()
-    local navic = require("nvim-navic")
-
     return {
         options = {
             icons_enabled = true,
@@ -51,32 +49,6 @@ local opts = function()
                 },
             },
         },
-        winbar = {
-            lualine_a = {},
-            lualine_b = {
-                {
-                    function()
-                        if not navic.is_available() then
-                            return ">"
-                        end
-                        local location = navic.get_location()
-                        if location == "" then
-                            return ">"
-                        end
-                        return location
-                    end,
-                    --[[
-                    cond = function()
-                        return navic.is_available()
-                    end,
-                    --]]
-                },
-            },
-            lualine_c = {},
-            lualine_x = {},
-            lualine_y = {},
-            lualine_z = {},
-        },
         extensions = {
             "fugitive",
             "fzf",
@@ -92,7 +64,6 @@ return {
         opts = opts,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
-            "SmiteshP/nvim-navic",
         },
     },
 }

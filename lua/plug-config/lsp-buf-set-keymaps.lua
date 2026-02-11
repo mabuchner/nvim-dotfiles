@@ -62,7 +62,12 @@ local lsp_buf_set_keymaps = function(bufnr)
     vim.keymap.set({ "v", "n" }, "<space>ca", vim.lsp.buf.code_action, buffer_opts)
     vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", buffer_opts)
     vim.keymap.set({ "v", "n" }, "<space>f", function()
-        vim.lsp.buf.format({ async = true })
+        vim.lsp.buf.format({
+            async = true,
+            filter = function(client)
+                return client.name ~= "gopls" -- Use gofmt / gofumpt for formatting
+            end,
+        })
     end, buffer_opts)
 
     -- Debugger

@@ -120,11 +120,4 @@ return {
             "rafamadriz/friendly-snippets",
         },
     },
-    {
-        "kosayoda/nvim-lightbulb",
-        opts = { autocmd = { enabled = true } },
-        dependencies = {
-            "antoinemadec/FixCursorHold.nvim", -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
-        },
-    },
 }

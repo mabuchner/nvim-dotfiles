@@ -100,10 +100,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Hook vim.lsp.client.create to add completion capabilities by default
-local _create = vim.lsp.client.create
-vim.lsp.client.create = function(config)
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    return _create(vim.tbl_deep_extend("keep", config, {
-        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-    }))
-end
+-- local _create = vim.lsp.client.create
+-- vim.lsp.client.create = function(config)
+--     local capabilities = vim.lsp.protocol.make_client_capabilities()
+--     return _create(vim.tbl_deep_extend("keep", config, {
+--         capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+--     }))
+-- end

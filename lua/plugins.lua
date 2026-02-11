@@ -1,140 +1,236 @@
-local Plug = vim.fn["plug#"]
+return {
+    -- Easy-access terminal
+    {
+        "akinsho/toggleterm.nvim",
+        init = function()
+            require("plug-config/toggleterm")
+        end,
+    },
 
-vim.call("plug#begin", "~/.local/share/nvim/plugged")
+    -- Theme
+    {
+        "arcticicestudio/nord-vim",
+        init = function()
+            require("plug-config/nord")
+        end,
+    },
 
--- Easy-access terminal
-Plug("akinsho/toggleterm.nvim")
+    -- Startup screen
+    {
+        "mhinz/vim-startify",
+        init = function()
+            require("plug-config/startify")
+        end,
+    },
 
--- Theme
-Plug("arcticicestudio/nord-vim")
+    -- Remember last file positions
+    "farmergreg/vim-lastplace",
 
--- Startup screen
-Plug("mhinz/vim-startify")
+    -- Indentation guides
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        init = function()
+            require("plug-config/indent-blankline")
+        end,
+    },
 
--- Remember last file positions
-Plug("farmergreg/vim-lastplace")
+    -- Highlight trailing whitespace
+    {
+        "ntpeters/vim-better-whitespace",
+        init = function()
+            require("plug-config/vim-better-whitespace")
+        end,
+    },
 
--- Indentation guides
-Plug("lukas-reineke/indent-blankline.nvim")
+    -- Automatic closing of quotes, parenthesis, brackets, etc.
+    {
+        "windwp/nvim-autopairs",
+        init = function()
+            require("plug-config/nvim-autopairs")
+        end,
+    },
 
--- Highlight trailing whitespace
-Plug("ntpeters/vim-better-whitespace")
+    -- Git
+    "tpope/vim-fugitive",
 
--- Automatic closing of quotes, parenthesis, brackets, etc.
-Plug("windwp/nvim-autopairs")
+    -- Modifications of surroundings
+    "tpope/vim-surround",
 
--- Git
-Plug("tpope/vim-fugitive")
+    -- Allow plugins to repeat last action with .
+    "tpope/vim-repeat",
 
--- Modifications of surroundings
-Plug("tpope/vim-surround")
+    -- Asynchronous Make
+    "tpope/vim-dispatch",
 
--- Allow plugins to repeat last action with .
-Plug("tpope/vim-repeat")
+    -- Mappings for complimentary pairs
+    "tpope/vim-unimpaired",
 
--- Asynchronous Make
-Plug("tpope/vim-dispatch")
+    -- Pig syntax highlighting
+    "motus/pig.vim",
 
--- Mappings for complimentary pairs
-Plug("tpope/vim-unimpaired")
+    -- LSP
+    "williamboman/mason-lspconfig.nvim",
+    {
+        "williamboman/mason.nvim",
+        init = function()
+            require("plug-config/mason-nvim")
+        end,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        init = function()
+            require("plug-config/lspconfig")
+        end,
+    },
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-nvim-lua",
+    {
+        "hrsh7th/nvim-cmp",
+        init = function()
+            require("plug-config/cmp")
+        end,
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        init = function()
+            require("plug-config/luasnip")
+        end,
+    },
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
+    "jayp0521/mason-null-ls.nvim",
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        init = function()
+            require("plug-config/null-ls")
+        end,
+    },
+    {
+        "ray-x/lsp_signature.nvim",
+        init = function()
+            require("plug-config/lsp_signature")
+        end,
+    },
+    "nvim-lua/plenary.nvim", -- Required by null-ls and telescope
+    "onsails/lspkind-nvim", -- Add pictograms to lsp completion
 
--- Pig syntax highlighting
-Plug("motus/pig.vim")
+    -- Java LSP
+    {
+        "mfussenegger/nvim-jdtls",
+        init = function()
+            require("plug-config/nvim-jdtls")
+        end,
+    },
 
--- LSP
-Plug("williamboman/mason.nvim")
-Plug("williamboman/mason-lspconfig.nvim")
-Plug("neovim/nvim-lspconfig")
-Plug("hrsh7th/cmp-nvim-lsp")
-Plug("hrsh7th/cmp-buffer")
-Plug("hrsh7th/cmp-path")
-Plug("hrsh7th/cmp-cmdline")
-Plug("hrsh7th/cmp-nvim-lua")
-Plug("hrsh7th/nvim-cmp")
-Plug("L3MON4D3/LuaSnip")
-Plug("saadparwaiz1/cmp_luasnip")
-Plug("rafamadriz/friendly-snippets")
-Plug("jose-elias-alvarez/null-ls.nvim")
-Plug("jayp0521/mason-null-ls.nvim")
-Plug("ray-x/lsp_signature.nvim")
-Plug("nvim-lua/plenary.nvim") -- Required by null-ls and telescope
-Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion
+    -- Scala LSP
+    {
+        "scalameta/nvim-metals",
+        init = function()
+            require("plug-config/nvim-metals")
+        end,
+    }, -- Requires "nvim-lua/plenary.nvim
 
--- Java LSP
-Plug("mfussenegger/nvim-jdtls")
+    -- Debugging
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "theHamsta/nvim-dap-virtual-text",
+        },
+        init = function()
+            require("plug-config/nvim-dap")
+        end,
+    },
 
--- Scala LSP
-Plug("scalameta/nvim-metals") -- Requires "nvim-lua/plenary.nvim"
+    -- Status line component showing the current code context using LSP
+    {
+        "SmiteshP/nvim-navic",
+        init = function()
+            require("plug-config/nvim-navic")
+        end,
+    },
 
--- Debugging
-Plug("mfussenegger/nvim-dap")
-Plug("rcarriga/nvim-dap-ui")
-Plug("theHamsta/nvim-dap-virtual-text")
+    -- Telescope
+    -- Plug("nvim-lua/plenary.nvim")
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    {
+        "nvim-telescope/telescope.nvim",
+        init = function()
+            require("plug-config/telescope")
+        end,
+    },
 
--- Status line component showing the current code context using LSP
-Plug("SmiteshP/nvim-navic")
+    -- lualine
+    "kyazdani42/nvim-web-devicons",
+    {
+        "nvim-lualine/lualine.nvim",
+        init = function()
+            require("plug-config/lualine")
+        end,
+    },
 
--- Telescope
--- Plug("nvim-lua/plenary.nvim")
-Plug("nvim-telescope/telescope.nvim")
-Plug("nvim-telescope/telescope-live-grep-args.nvim")
-Plug("nvim-telescope/telescope-fzf-native.nvim", { ["do"] = "make" })
+    -- tressitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        init = function()
+            require("plug-config/nvim-treesitter")
+        end,
+    },
 
--- lualine
-Plug("nvim-lualine/lualine.nvim")
-Plug("kyazdani42/nvim-web-devicons")
+    -- Notifications
+    {
+        "rcarriga/nvim-notify",
+        init = function()
+            require("plug-config/nvim-notify")
+        end,
+    },
 
--- tressitter
-Plug("nvim-treesitter/nvim-treesitter", { ["do"] = vim.fn["TSUpdate"] })
+    -- Show LSP progress
+    {
+        "j-hui/fidget.nvim",
+        init = function()
+            require("plug-config/fidget-nvim")
+        end,
+    },
 
--- Notifications
-Plug("rcarriga/nvim-notify")
+    -- UI for vim.ui.select and vim.ui.input hooks
+    "stevearc/dressing.nvim",
 
--- Show LSP progress
-Plug("j-hui/fidget.nvim")
+    -- Show light bulb in sign column whenever a code action is available
+    {
+        "kosayoda/nvim-lightbulb",
+        init = function()
+            require("plug-config/nvim-lightbulb")
+        end,
+    },
+    "antoinemadec/FixCursorHold.nvim", -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
 
--- UI for vim.ui.select and vim.ui.input hooks
-Plug("stevearc/dressing.nvim")
+    -- List for diagnostics
+    {
+        "folke/trouble.nvim",
+        init = function()
+            require("plug-config/trouble")
+        end,
+    }, -- Depends on "kyazdani42/nvim-web-devicons"
 
--- Show light bulb in sign column whenever a code action is available
-Plug("kosayoda/nvim-lightbulb")
-Plug("antoinemadec/FixCursorHold.nvim") -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
+    -- Comments
+    {
+        "numToStr/Comment.nvim",
+        init = function()
+            require("plug-config/comment")
+        end,
+    },
 
--- List for diagnostics
-Plug("folke/trouble.nvim") -- Depends on "kyazdani42/nvim-web-devicons"
-
--- Comments
-Plug("numToStr/Comment.nvim")
-
--- Latex
-Plug("lervag/vimtex")
-
-vim.call("plug#end")
-
--- Configuration
-
-require("plug-config/cmp")
-require("plug-config/comment")
-require("plug-config/fidget-nvim")
-require("plug-config/indent-blankline")
-require("plug-config/lspconfig")
-require("plug-config/lsp_signature")
-require("plug-config/lualine")
-require("plug-config/luasnip")
-require("plug-config/mason-nvim")
-require("plug-config/nord")
-require("plug-config/null-ls")
-require("plug-config/nvim-autopairs")
-require("plug-config/nvim-dap")
-require("plug-config/nvim-navic")
-require("plug-config/nvim-notify")
-require("plug-config/nvim-lightbulb")
-require("plug-config/nvim-metals")
-require("plug-config/nvim-treesitter")
-require("plug-config/startify")
-require("plug-config/telescope")
-require("plug-config/toggleterm")
-require("plug-config/trouble")
-require("plug-config/vim-better-whitespace")
-require("plug-config/vimtex")
-require("plug-config/nvim-jdtls")
+    -- Latex
+    {
+        "lervag/vimtex",
+        init = function()
+            require("plug-config/vimtex")
+        end,
+    },
+}

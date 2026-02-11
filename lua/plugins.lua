@@ -75,6 +75,9 @@ Plug("rcarriga/nvim-notify")
 -- Show light bulb in sign column whenever a code action is available
 Plug("kosayoda/nvim-lightbulb")
 
+-- List for diagnostics
+Plug('folke/trouble.nvim') -- Depends on "kyazdani42/nvim-web-devicons"
+
 -- Comments
 Plug("numToStr/Comment.nvim")
 
@@ -101,5 +104,6 @@ require("plug-config/spellsitter")
 require("plug-config/startify")
 require("plug-config/telescope")
 require("plug-config/toggleterm")
+require("plug-config/trouble")
 require("plug-config/vim-better-whitespace")
 require("plug-config/vimtex")

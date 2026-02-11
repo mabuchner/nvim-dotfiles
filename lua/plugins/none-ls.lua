@@ -8,7 +8,7 @@ local config = function()
         sources = {
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.cmake_format,
-            null_ls.builtins.formatting.latexindent,
+            require("none-ls.formatting.latexindent"),
             -- null_ls.builtins.formatting.gofmt,
             null_ls.builtins.formatting.goimports.with({
                 args = {
@@ -163,6 +163,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "gbprod/none-ls-shellcheck.nvim",
+            "nvimtools/none-ls-extras.nvim",
         },
     },
     {

@@ -75,6 +75,9 @@ Plug("lewis6991/spellsitter.nvim")
 -- Notifications
 Plug("rcarriga/nvim-notify")
 
+-- UI for vim.ui.select and vim.ui.input hooks
+Plug("stevearc/dressing.nvim")
+
 -- Show light bulb in sign column whenever a code action is available
 Plug("kosayoda/nvim-lightbulb")
 Plug("antoinemadec/FixCursorHold.nvim") -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587

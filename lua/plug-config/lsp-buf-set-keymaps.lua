@@ -6,6 +6,14 @@ vim.api.nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", op
 vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
+local dap_continue = function()
+    -- Try to load '.vscode/launch.json', which can be used to configure the debugger
+    if vim.fn.filereadable(".vscode/launch.json") then
+        require("dap.ext.vscode").load_launchjs(nil, { lldb = { "c", "cpp", "rust" } })
+    end
+    require("dap").continue()
+end
+
 local lsp_buf_set_keymaps = function(bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -40,7 +48,7 @@ local lsp_buf_set_keymaps = function(bufnr)
     end, { buffer = bufnr, noremap = true, silent = true })
 
     -- Debugger
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<F5>", "<cmd>lua require('dap').continue()<CR>", opts)
+    vim.keymap.set("n", "<F5>", dap_continue, { buffer = bufnr })
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<F10>", "<cmd>lua require('dap').step_over()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<F11>", "<cmd>lua require('dap').step_into()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<F12>", "<cmd>lua require('dap').step_out()<CR>", opts)

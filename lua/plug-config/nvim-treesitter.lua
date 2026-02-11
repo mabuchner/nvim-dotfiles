@@ -41,6 +41,7 @@ require("nvim-treesitter.configs").setup({
 		"rst",
 		"ruby",
 		"rust",
+        "scala",
 		"scheme",
 		"scss",
 		"swift",

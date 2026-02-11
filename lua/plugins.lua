@@ -74,6 +74,9 @@ Plug("mfussenegger/nvim-dap")
 Plug("rcarriga/nvim-dap-ui")
 Plug("theHamsta/nvim-dap-virtual-text")
 
+-- Status line component showing the current code context using LSP
+Plug("SmiteshP/nvim-navic")
+
 -- Telescope
 -- Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
@@ -129,6 +132,7 @@ require("plug-config/nord")
 require("plug-config/null-ls")
 require("plug-config/nvim-autopairs")
 require("plug-config/nvim-dap")
+require("plug-config/nvim-navic")
 require("plug-config/nvim-notify")
 require("plug-config/nvim-lightbulb")
 require("plug-config/nvim-metals")

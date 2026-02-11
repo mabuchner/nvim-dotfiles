@@ -2,9 +2,15 @@ local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 
+local navic = require("nvim-navic")
+
 local lsp_buf_set_keymaps = require("plug-config/lsp-buf-set-keymaps")
 
 local on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+
     lsp_buf_set_keymaps(bufnr)
 end
 

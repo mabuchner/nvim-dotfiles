@@ -31,6 +31,8 @@ opt.smartcase = true
 opt.ignorecase = true
 -- Enable wildmenu
 opt.wildmode = "longest:list,full"
+-- Restrict number of elements in popup menu
+opt.pumheight = 10
 
 opt.tabstop = 4
 opt.shiftwidth = 4

@@ -61,6 +61,17 @@ Plug("ray-x/lsp_signature.nvim")
 Plug("nvim-lua/plenary.nvim") -- Required by null-ls and telescope
 Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion
 
+-- Java LSP
+Plug("mfussenegger/nvim-jdtls")
+
+-- Scala LSP
+Plug("scalameta/nvim-metals") -- Requires "nvim-lua/plenary.nvim"
+
+-- Debugging
+Plug("mfussenegger/nvim-dap")
+Plug("rcarriga/nvim-dap-ui")
+Plug("theHamsta/nvim-dap-virtual-text")
+
 -- Telescope
 -- Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
@@ -115,8 +126,10 @@ require("plug-config/luasnip")
 require("plug-config/nord")
 require("plug-config/null-ls")
 require("plug-config/nvim-autopairs")
+require("plug-config/nvim-dap")
 require("plug-config/nvim-notify")
 require("plug-config/nvim-lightbulb")
+require("plug-config/nvim-metals")
 require("plug-config/nvim-treesitter")
 require("plug-config/spellsitter")
 require("plug-config/startify")
@@ -125,3 +138,4 @@ require("plug-config/toggleterm")
 require("plug-config/trouble")
 require("plug-config/vim-better-whitespace")
 require("plug-config/vimtex")
+require("plug-config/nvim-jdtls")

@@ -32,3 +32,6 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope buffers<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>f*", ":Telescope grep_string<cr>", { noremap = true })
+
+local builtin = require('telescope.builtin')
+vim.keymap.set("n", "<leader>fk", builtin.keymaps)

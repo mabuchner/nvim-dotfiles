@@ -16,7 +16,6 @@ require("nvim-treesitter.configs").setup({
 		"glsl",
 		"go",
 		"graphql",
-		"help",
 		"hjson",
 		"html",
 		"http",

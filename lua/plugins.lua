@@ -51,6 +51,7 @@ Plug("hrsh7th/cmp-vsnip")
 Plug("hrsh7th/vim-vsnip")
 Plug("jose-elias-alvarez/null-ls.nvim")
 Plug("nvim-lua/plenary.nvim") -- Required by null-ls
+Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion
 
 -- lualine
 Plug("nvim-lualine/lualine.nvim")

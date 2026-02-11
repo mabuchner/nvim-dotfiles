@@ -40,6 +40,19 @@ end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local enhance_server_opts = {
+	-- Provide settings that should only apply to the "eslint" server
+	["sumneko_lua"] = function(opts)
+		opts.settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
+			},
+		}
+	end,
+}
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
@@ -51,14 +64,9 @@ lsp_installer.on_server_ready(function(server)
 		},
 	}
 
-	if server.name == "sumneko_lua" then
-		opts.settings = {
-			Lua = {
-				diagnostics = {
-					globals = { "vim" },
-				},
-			},
-		}
+	if enhance_server_opts[server.name] then
+		-- Enhance the default opts with the server-specific ones
+		enhance_server_opts[server.name](opts)
 	end
 
 	server:setup(opts)

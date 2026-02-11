@@ -1,4 +1,9 @@
 return {
+    -- Thin colorcolumn
+    {
+        "lukas-reineke/virt-column.nvim",
+        config = true,
+    },
     -- UI for vim.ui.select and vim.ui.input hooks
     {
         "stevearc/dressing.nvim",

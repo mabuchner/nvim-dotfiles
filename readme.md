@@ -24,5 +24,5 @@ nvim
 Install LSPs
 
 ```
-:LspInstall clangd texlab tsserver
+:LspInstall bashls clangd cmake dockerls html omnisharp sumneko_lua texlab tsserver
 ```

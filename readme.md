@@ -13,3 +13,16 @@ Clone repository into `.config` directory
 cd ~/.config
 git clone https://github.com/mabuchner/nvim-dotfiles nvim
 ```
+
+Run nvim (ignore errors) and install plugins
+
+```
+nvim
+:PlugInstall
+```
+
+Install LSPs
+
+```
+:LspInstall clangd texlab tsserver
+```

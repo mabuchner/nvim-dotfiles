@@ -33,7 +33,6 @@ local config = function()
                     "$FILENAME",
                 },
             }),
-            null_ls.builtins.diagnostics.eslint,
             null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.gitlint,
             -- null_ls.builtins.diagnostics.golangci_lint,
@@ -49,7 +48,6 @@ local config = function()
             require("none-ls-shellcheck.diagnostics"),
             null_ls.builtins.diagnostics.vint,
             null_ls.builtins.diagnostics.write_good,
-            null_ls.builtins.code_actions.eslint,
             null_ls.builtins.code_actions.proselint,
             require("none-ls-shellcheck.code_actions"),
             null_ls.builtins.completion.spell,
@@ -90,10 +88,6 @@ mason_null_ls.setup_handlers({
                 "$FILENAME",
             },
         }))
-    end,
-    eslint = function(source_name, methods)
-        null_ls.register(null_ls.builtins.diagnostics.eslint)
-        null_ls.register(null_ls.builtins.code_actions.eslint)
     end,
     flake8 = function(source_name, methods)
         null_ls.register(null_ls.builtins.diagnostics.flake8)

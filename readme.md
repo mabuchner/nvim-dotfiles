@@ -10,6 +10,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 Clone repository into `.config` directory
 
 ```sh
-cd ~/.config/nvim
-git clone https://github.com/mabuchner/nvim-dotfiles .
+cd ~/.config
+git clone https://github.com/mabuchner/nvim-dotfiles nvim
 ```

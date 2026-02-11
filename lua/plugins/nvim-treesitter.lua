@@ -31,6 +31,7 @@ local init = function()
             "lua",
             "make",
             "markdown",
+            "markdown_inline",
             "ninja",
             "pascal",
             "perl",

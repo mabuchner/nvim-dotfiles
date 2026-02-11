@@ -1,7 +1,9 @@
 -- List for diagnostics
 
 local init = function()
-    require("trouble").setup({})
+    require("trouble").setup({
+        auto_preview = false, -- Do not directly jump to location of diagnostics
+    })
 
     vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true, noremap = true })
     vim.api.nvim_set_keymap(

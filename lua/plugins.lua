@@ -58,7 +58,7 @@ Plug("onsails/lspkind-nvim") -- Add pictograms to lsp completion
 -- Telescope
 -- Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
-Plug("nvim-telescope/telescope-live-grep-raw.nvim")
+Plug("nvim-telescope/telescope-live-grep-args.nvim")
 Plug("nvim-telescope/telescope-fzf-native.nvim", { ["do"] = "make" })
 
 -- lualine

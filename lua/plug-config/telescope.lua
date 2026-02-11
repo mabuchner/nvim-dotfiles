@@ -2,6 +2,7 @@ local telescope = require("telescope")
 
 telescope.setup({
 	defaults = {
+		file_ignore_patterns = { "^bin/main/", "^bin/test/" },
 		path_display = { "smart" },
 	},
 	extensions = {

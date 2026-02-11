@@ -1,7 +1,7 @@
 local configLLDB = function(dap)
     dap.adapters.lldb = {
         type = "executable",
-        command = "/opt/homebrew/opt/llvm/bin/lldb-vscode",
+        command = vim.fn.exepath("lldb-dap"),
         name = "lldb",
     }
 

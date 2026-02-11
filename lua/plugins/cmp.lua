@@ -85,6 +85,7 @@ local config = function()
         formatting = {
             format = lspkind.cmp_format({
                 mode = "symbol_text",
+                show_labelDetails = true,
 
                 menu = {
                     nvim_lsp = "[LSP]",

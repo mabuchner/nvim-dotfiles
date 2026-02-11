@@ -64,9 +64,6 @@ cmp.setup({
 	}, {
 		{ name = "buffer" },
 	}),
-	experimental = {
-		ghost_text = true,
-	},
 	formatting = {
 		format = lspkind.cmp_format({
 			mode = "symbol_text",
@@ -84,6 +81,12 @@ cmp.setup({
 				return vim_item
 			end,
 		}),
+	},
+	documentation = {
+		border = "rounded",
+	},
+	experimental = {
+		ghost_text = true,
 	},
 })
 

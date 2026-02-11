@@ -17,8 +17,6 @@ augroup npm
   autocmd FileType javascript nnoremap <buffer><leader>mt :!npm run test
 augroup END
 
-nnoremap <leader>af :ALEFix<cr>
-
 augroup clang-format
   autocmd!
   autocmd FileType c,cpp,cs,javascript,objc,objcpp noremap <buffer><C-K> :py3file /usr/local/opt/llvm/share/clang/clang-format.py<cr>

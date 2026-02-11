@@ -74,9 +74,10 @@ Plug("rcarriga/nvim-notify")
 
 -- Show light bulb in sign column whenever a code action is available
 Plug("kosayoda/nvim-lightbulb")
+Plug("antoinemadec/FixCursorHold.nvim") -- Fix CursorHold behaviour see https://github.com/neovim/neovim/issues/12587
 
 -- List for diagnostics
-Plug('folke/trouble.nvim') -- Depends on "kyazdani42/nvim-web-devicons"
+Plug("folke/trouble.nvim") -- Depends on "kyazdani42/nvim-web-devicons"
 
 -- Comments
 Plug("numToStr/Comment.nvim")

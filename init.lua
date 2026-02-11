@@ -40,6 +40,9 @@ opt.expandtab = true
 opt.mouse = "a"
 opt.mousemodel = "popup"
 
+-- Enable 24-bit RGB color (requires a compatible terminal)
+opt.termguicolors = true
+
 vim.cmd([[
 augroup setFileSyntax
   autocmd!

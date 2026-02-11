@@ -2,9 +2,6 @@ local Plug = vim.fn["plug#"]
 
 vim.call("plug#begin", "~/.local/share/nvim/plugged")
 
--- Speed up lua module loading by caching the byte code
-Plug("lewis6991/impatient.nvim")
-
 -- Easy-access terminal
 Plug("akinsho/toggleterm.nvim")
 
@@ -113,8 +110,6 @@ Plug("numToStr/Comment.nvim")
 Plug("lervag/vimtex")
 
 vim.call("plug#end")
-
-require("impatient")
 
 -- Configuration
 

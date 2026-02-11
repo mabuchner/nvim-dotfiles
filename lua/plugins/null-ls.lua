@@ -4,12 +4,22 @@ local config = function()
     local mason_null_ls = require("mason-null-ls")
 
     null_ls.setup({
+        debounce = 1000,
         sources = {
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.cmake_format,
             null_ls.builtins.formatting.latexindent,
-            -- null_ls.builtins.formatting.gofmt,
-            null_ls.builtins.formatting.gofumpt,
+            null_ls.builtins.formatting.gofmt,
+            null_ls.builtins.formatting.goimports.with({
+                args = {
+                    "-srcdir",
+                    "$DIRNAME",
+                    "-local",
+                    "git.byted.org,code.byted.org",
+                    "-format-only",
+                },
+            }),
+            -- null_ls.builtins.formatting.gofumpt,
             -- null_ls.builtins.formatting.goimports_reviser,
             -- null_ls.builtins.formatting.golines,
             null_ls.builtins.formatting.scalafmt,
@@ -29,6 +39,7 @@ local config = function()
             null_ls.builtins.diagnostics.eslint,
             null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.gitlint,
+            -- null_ls.builtins.diagnostics.golangci_lint,
             null_ls.builtins.diagnostics.jsonlint,
             null_ls.builtins.diagnostics.markdownlint.with({
                 args = {

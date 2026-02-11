@@ -25,8 +25,10 @@ Install LSPs
 
 ```
 :LspInstall bashls clangd cmake dockerls html omnisharp sumneko_lua texlab tsserver
+:NullLsInstall cmake_format latexindent
 ```
 
+Mason-null-ls will also automatically try to install a few default sources.
 
 The nvim-web-devicons plugin needs Nerd Fonts. Install Nerd Font as described [here](https://github.com/ryanoasis/nerd-fonts).
 

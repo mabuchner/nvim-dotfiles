@@ -10,6 +10,7 @@ opt.spell = true
 opt.spelllang = "en_gb"
 
 -- Show line numbers
+opt.number = true
 opt.relativenumber = true
 -- Increase the width of the number column
 opt.numberwidth = 5

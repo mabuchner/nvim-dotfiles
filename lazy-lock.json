@@ -50,5 +50,6 @@
   "vim-startify": { "branch": "master", "commit": "81e36c352a8deea54df5ec1e2f4348685569bed2" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-unimpaired": { "branch": "master", "commit": "6d44a6dc2ec34607c41ec78acf81657248580bf1" },
-  "vimtex": { "branch": "master", "commit": "28c71043604271d37be9582c89128d2acedff065" }
+  "vimtex": { "branch": "master", "commit": "28c71043604271d37be9582c89128d2acedff065" },
+  "virt-column.nvim": { "branch": "master", "commit": "93b40ea038f676f5a72d7d1f2336fe7b051fc0ce" }
 }

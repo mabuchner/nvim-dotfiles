@@ -3,9 +3,6 @@ local config = function()
 
     local mason_null_ls = require("mason-null-ls")
 
-    require("null-ls").register(require("none-ls-shellcheck.diagnostics"))
-    require("null-ls").register(require("none-ls-shellcheck.code_actions"))
-
     null_ls.setup({
         debounce = 1000,
         sources = {
@@ -51,12 +48,12 @@ local config = function()
             }),
             null_ls.builtins.diagnostics.proselint,
             null_ls.builtins.diagnostics.pylint,
-            null_ls.builtins.diagnostics.shellcheck,
+            require("none-ls-shellcheck.diagnostics"),
             null_ls.builtins.diagnostics.vint,
             null_ls.builtins.diagnostics.write_good,
             null_ls.builtins.code_actions.eslint,
             null_ls.builtins.code_actions.proselint,
-            null_ls.builtins.code_actions.shellcheck,
+            require("none-ls-shellcheck.code_actions"),
             null_ls.builtins.completion.spell,
         },
     })

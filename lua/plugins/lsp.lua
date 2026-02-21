@@ -1,10 +1,12 @@
 vim.diagnostic.config({ virtual_text = true })
 
 local config = function()
-	-- Show line diagnostics automatically in hover window
-	vim.o.updatetime = 250
-	-- For diagnostics at specific cursor position
-	vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
+	-- Full diagnostic detail on demand via <space>e (vim.diagnostic.open_float)
+	vim.diagnostic.config({
+		virtual_text = {
+			prefix = "●",
+		},
+	})
 
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")

@@ -1,15 +1,13 @@
 -- Disable arrow keys
-vim.api.nvim_set_keymap("n", "<Left>", ':echoe "Use h"<CR>', { noremap = true })
-vim.api.nvim_set_keymap("n", "<Right>", ':echoe "Use l"<CR>', { noremap = true })
-vim.api.nvim_set_keymap("n", "<Up>", ':echoe "Use k"<CR>', { noremap = true })
-vim.api.nvim_set_keymap("n", "<Down>", ':echoe "Use j"<CR>', { noremap = true })
+vim.keymap.set("n", "<Left>",  ':echoe "Use h"<CR>', { noremap = true })
+vim.keymap.set("n", "<Right>", ':echoe "Use l"<CR>', { noremap = true })
+vim.keymap.set("n", "<Up>",    ':echoe "Use k"<CR>', { noremap = true })
+vim.keymap.set("n", "<Down>",  ':echoe "Use j"<CR>', { noremap = true })
 
 -- Move vertically by visual line
 -- (only if no count was given)
-vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
-vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
-vim.api.nvim_set_keymap("n", "k", "(v:count == 0 ? 'gk' : 'k')", { expr = true, noremap = true })
-vim.api.nvim_set_keymap("n", "j", "(v:count == 0 ? 'gj' : 'j')", { expr = true, noremap = true })
+vim.keymap.set("n", "k", "(v:count == 0 ? 'gk' : 'k')", { expr = true, noremap = true })
+vim.keymap.set("n", "j", "(v:count == 0 ? 'gj' : 'j')", { expr = true, noremap = true })
 
 vim.api.nvim_create_autocmd("FileType", {
     group = vim.api.nvim_create_augroup("npm", { clear = true }),

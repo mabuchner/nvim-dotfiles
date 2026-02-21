@@ -11,27 +11,30 @@ vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
 vim.api.nvim_set_keymap("n", "k", "(v:count == 0 ? 'gk' : 'k')", { expr = true, noremap = true })
 vim.api.nvim_set_keymap("n", "j", "(v:count == 0 ? 'gj' : 'j')", { expr = true, noremap = true })
 
-vim.cmd([[
-augroup npm
-  autocmd!
-  autocmd FileType javascript nnoremap <buffer><leader>mm :!npm run build
-  autocmd FileType javascript nnoremap <buffer><leader>mt :!npm run test
-augroup END
-]])
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("npm", { clear = true }),
+    pattern = "javascript",
+    callback = function()
+        vim.keymap.set("n", "<leader>mm", ":!npm run build", { buffer = true, noremap = true })
+        vim.keymap.set("n", "<leader>mt", ":!npm run test", { buffer = true, noremap = true })
+    end,
+})
 
-vim.cmd([[
-augroup clang-format
-  autocmd!
-  autocmd FileType c,cpp,cs,javascript,objc,objcpp noremap <buffer><C-K> :py3file /usr/local/opt/llvm/share/clang/clang-format.py<cr>
-  autocmd FileType c,cpp,cs,javascript,objc,objcpp inoremap <buffer><C-K> <c-o>:py3file /usr/local/opt/llvm/share/clang/clang-format.py<cr>
-augroup END
-]])
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("clang-format", { clear = true }),
+    pattern = { "c", "cpp", "cs", "javascript", "objc", "objcpp" },
+    callback = function()
+        vim.keymap.set("n", "<C-K>", ":py3file /usr/local/opt/llvm/share/clang/clang-format.py<cr>", { buffer = true, noremap = true })
+        vim.keymap.set("i", "<C-K>", "<c-o>:py3file /usr/local/opt/llvm/share/clang/clang-format.py<cr>", { buffer = true, noremap = true })
+    end,
+})
 
-vim.cmd([[
-augroup make
-  autocmd!
-  autocmd FileType c,cpp,objc,objcpp,cmake nnoremap <buffer><leader>mm :Make --build build
-  autocmd FileType c,cpp,objc,objcpp,cmake nnoremap <buffer><leader>mt :Make --target test --build build
-  autocmd FileType c,cpp,objc,objcpp,cmake nnoremap <buffer><leader>mi :Make --target install --build build
-augroup END
-]])
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("make", { clear = true }),
+    pattern = { "c", "cpp", "objc", "objcpp", "cmake" },
+    callback = function()
+        vim.keymap.set("n", "<leader>mm", ":Make --build build", { buffer = true, noremap = true })
+        vim.keymap.set("n", "<leader>mt", ":Make --target test --build build", { buffer = true, noremap = true })
+        vim.keymap.set("n", "<leader>mi", ":Make --target install --build build", { buffer = true, noremap = true })
+    end,
+})

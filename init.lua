@@ -47,21 +47,36 @@ opt.mousemodel = "popup"
 -- Enable 24-bit RGB color (requires a compatible terminal)
 opt.termguicolors = true
 
-vim.cmd([[
-augroup setFileSyntax
-  autocmd!
-  autocmd BufNewFile,BufRead *.mm set filetype=objcpp
-  autocmd BufNewFile,BufRead *.vl set filetype=json
-augroup END
-]])
+local filetype_group = vim.api.nvim_create_augroup("setFileSyntax", { clear = true })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  group = filetype_group,
+  pattern = "*.mm",
+  callback = function() vim.bo.filetype = "objcpp" end,
+})
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  group = filetype_group,
+  pattern = "*.vl",
+  callback = function() vim.bo.filetype = "json" end,
+})
 
-vim.cmd([[
-augroup custom-shift-width
-  autocmd!
-  autocmd FileType javascript,json,typescript,typescriptreact setlocal shiftwidth=2 tabstop=2
-  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
-augroup END
-]])
+local indent_group = vim.api.nvim_create_augroup("custom-shift-width", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = indent_group,
+  pattern = { "javascript", "json", "typescript", "typescriptreact" },
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = indent_group,
+  pattern = "go",
+  callback = function()
+    vim.bo.expandtab = false
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+  end,
+})
 
 -- Better formatting for git commit messages
 -- vim.cmd([[

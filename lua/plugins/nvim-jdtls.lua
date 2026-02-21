@@ -1,8 +1,6 @@
 local config = function()
     local jdtls = require("jdtls")
     local jdtls_setup = require("jdtls.setup")
-    local lsp_buf_set_keymaps = require("plug-config/lsp-buf-set-keymaps")
-
     local java8_path = "/usr/local/opt/openjdk@8/libexec/openjdk.jdk"
     local java17_path = "/usr/local/opt/openjdk@17/libexec/openjdk.jdk"
 
@@ -99,8 +97,6 @@ local config = function()
 
         -- Add Jdt... Vim command
         jdtls_setup.add_commands()
-
-        lsp_buf_set_keymaps(bufnr)
     end
 
     local status_callback = function(_, result)

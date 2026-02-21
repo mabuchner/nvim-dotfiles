@@ -13,17 +13,6 @@ local config = function()
     --   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     -- }
 
-    local lsp_buf_set_keymaps = require("plug-config/lsp-buf-set-keymaps")
-
-    local on_attach = function(client, bufnr)
-        -- require("metals").setup_dap()
-
-        lsp_buf_set_keymaps(bufnr)
-    end
-
-    metals_config.on_attach = on_attach
-
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
     metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local setup = function()

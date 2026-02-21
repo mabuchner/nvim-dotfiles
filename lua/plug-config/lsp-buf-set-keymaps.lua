@@ -34,7 +34,7 @@ end
 
 local lsp_buf_set_keymaps = function(bufnr)
     -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+    vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
     local buffer_opts = {
         buffer = bufnr,

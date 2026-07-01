@@ -85,3 +85,69 @@ require("keys")
 require("lsp")
 
 require("config.lazy")
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"bash",
+		"bibtex",
+		"c",
+		"c_sharp",
+		"cmake",
+		"commonlisp",
+		"cpp",
+		"css",
+		"csv",
+		"forth",
+		"git_config",
+		"git_rebase",
+		"gitattributes",
+		"gitcommit",
+		"gitignore",
+		"glsl",
+		"go",
+		"gomod",
+		"gosum",
+		"gotmpl",
+		"gowork",
+		"html",
+		"idl",
+		"java",
+		"javadoc",
+		"javascript",
+		"jsdoc",
+		"json",
+		"jsx",
+		"latex",
+		"lua",
+		"luadoc",
+		"make",
+		"markdown",
+		"mermaid",
+		"meson",
+		"ninja",
+		"odin",
+		"proto",
+		"python",
+		"rust",
+		"sql",
+		"toml",
+		"tsv",
+		"tsx",
+		"typescript",
+		"vim",
+		"vimdoc",
+		"vue",
+		"xml",
+		"yaml",
+		"zsh",
+	},
+	callback = function()
+		-- syntax highlighting, provided by Neovim
+		vim.treesitter.start()
+		-- folds, provided by Neovim
+		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		-- vim.wo.foldmethod = "expr"
+		-- indentation, provided by nvim-treesitter
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
+})

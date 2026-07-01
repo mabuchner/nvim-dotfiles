@@ -30,3 +30,9 @@ bold_font SauceCodePro Nerd Font Mono Bold
 italic_font SauceCodePro Nerd Font Mono Italic
 bold_italic_font SauceCodePro Nerd Font Mono Bold Italic
 ```
+
+Install tresssitter CLI
+
+```
+brew install tree-sitter-cli
+```
